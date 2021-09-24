@@ -19,9 +19,15 @@ int startScreen()
 int newMax()
 {
     int newNum;
-    printf("Please choose a new max number up to 10: ");
+    printf("\nPlease choose a new max number up to 10: ");
     scanf("%d", &newNum);
-    return newNum;
+    if (newNum > 0 && newNum <= 10){
+        return newNum;
+    }else{
+        printf("Number is invalid, please try again: ");
+        newMax();
+    }
+
 }
 
 
@@ -70,7 +76,6 @@ int main()
             printf("Thanks for playing!");
             check = true;
         }else{
-            
             printf("This game has ended.");
             break;
         }
