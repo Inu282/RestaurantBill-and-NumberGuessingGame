@@ -43,11 +43,11 @@ int main()
     bool check = false;
     time_t t;
     srand((unsigned)time(&t));
-    int max = 10;
-    int random = rand() % max;
 
     while (check == false)
     {
+        int max = 10;
+        int random = 1 + rand() % max;
         int start = startScreen();
         if (start == 1)
         {
