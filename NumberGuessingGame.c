@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdbool.h>
-int caseQ(){
+int caseQ()
+{
     return 1;
 }
 int startScreen()
@@ -21,20 +22,21 @@ int newMax()
     int newNum;
     printf("\nPlease choose a new max number up to 10: ");
     scanf("%d", &newNum);
-    if (newNum > 0 && newNum <= 10){
+    if (newNum > 0 && newNum <= 10)
+    {
         return newNum;
-    }else{
+    }
+    else
+    {
         printf("Number is invalid, please try again: ");
         newMax();
     }
-
 }
-
 
 int main()
 {
+    FILE *fp;
     bool check = false;
-
     time_t t;
     srand((unsigned)time(&t));
     int max = 10;
@@ -69,15 +71,21 @@ int main()
         else if (start == 2)
         {
             max = newMax();
+            fp = fopen("userMax.txt", "w");
+
+            putw(max, fp);
+            fclose(fp);
             printf("New max has been set to %d, now returning to start\n", max);
         }
         else if (start == 3)
         {
             printf("Thanks for playing!");
             check = true;
-        }else{
+        }
+        else
+        {
             printf("This game has ended.");
             break;
         }
     }
-    }
+}
