@@ -1,3 +1,7 @@
+//Obtain user input for which option they will choose.
+//Design functions and/or loops in order to fulfill what each option asks for
+//print out whether the user/player was successful and/or what they need to do
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
